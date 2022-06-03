@@ -1,0 +1,7 @@
+A senha deve conter de 16 a 32 caracteres; OK
+Deve conter pelo menos 2 caracteres especiais; Ok
+arrumas os erros; ok
+Deve conter letras maiúsculas e minúsculas; Ok
+Não pode conter mais de 3 sequencias de caracteres, letras ou números (abc ou 123, por 
+exemplo). OK
+
