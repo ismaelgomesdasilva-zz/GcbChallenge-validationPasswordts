@@ -40,7 +40,6 @@ function isValidSpecialCharacther(password : string):boolean {
     }
     return true;
 }
-
 function isValidUppercase(password : string):boolean {
     //criei uma variavel boolean para verificação
     let upCase = false;
