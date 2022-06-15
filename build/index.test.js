@@ -30,8 +30,13 @@ describe('isValidCheck', () => {
         expect(sut.error).toEqual(["Não tem letra minuscula"]);
     });
     test('Deve retornar false caso a senha não possua letra minuscula', () => {
-        sut = (0, _1.isValidCheck)('EuTenhoSequencia123@@decaracteres');
+        sut = (0, _1.isValidCheck)('EuTenhoSequ123abc@@decaracteres');
         expect(sut.result).toEqual(false);
         expect(sut.error).toEqual(["tem sequencia de caracteres"]);
+    });
+    test('Deve retornar true caso a senha atenda todos os requisitos', () => {
+        sut = (0, _1.isValidCheck)("rZpy*D95&WBE'Z&B");
+        expect(sut.result).toEqual(true);
+        expect(sut.error).toEqual([]);
     });
 });

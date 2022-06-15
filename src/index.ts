@@ -92,7 +92,7 @@ function isValidSequentialLetter(password : string):boolean{
         ) {
             sequentialLetters = false;
         }
-    }
+    } 
     return sequentialLetters;
 }
 
@@ -137,7 +137,7 @@ export function isValidCheck(password : string):Response {
         resultErros.result = false;
         resultErros.error.push("tem sequencia de caracteres");
     }
-
-    return resultErros;
+ 
+return resultErros;
 }
-console.log(isValidCheck("EUNÃOTENH@LETR@MsINISCULA"))
+console.log(isValidCheck("!@#kwejdfskdsfSDF234"))

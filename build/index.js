@@ -2,16 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isValidCheck = void 0;
 //Variaveis usadas para verificações
-// const password = 'ADASDASDASXZCXgZXVZXC@@ZXC'
 const numbers = "0123456789";
 const iChars = "!`@#$%^&*()+=-[]\\';,./{}|\":<>?~_";
 const MIN_LENGTH_PASSWORD = 16;
 const MAX_LENGTH_PASSWORD = 32;
 //Variaveis usadas para verificações
-// Criando uma tipagem para meus resultados
-// Criando uma tipagem para meus resultados
-//Estruturação dos meus resultados
-//Estruturação dos meus resultados
 //Primeira verificação: Tamanho da senha
 function isValidLength(password) {
     //Condicional para saber se minha senha é menor ou maior que 16
@@ -41,14 +36,19 @@ function isValidSpecialCharacther(password) {
     return true;
 }
 function isValidUppercase(password) {
+    //criei uma variavel boolean para verificação
     let upCase = false;
+    //aqui eu separo toda minha senha 
     password.split("").forEach((element) => {
+        //tiro os numeros da senha 
         if (numbers.includes(element)) {
             return true;
         }
+        //tiro os caracteres especiais da minha senha 
         if (iChars.includes(element)) {
             return true;
         }
+        //por fim eu coloco todos em maiusculo e comparo se tem algum equivalente na senha 
         if (element.toUpperCase() === element) {
             upCase = true;
         }
@@ -71,7 +71,9 @@ function isValidLowerCase(password) {
     return lowCase;
 }
 function isValidSequentialLetter(password) {
+    //crio uma variavel transformando todos em maisculo
     let passwordUpper = password.toUpperCase();
+    //seto uma variavel boolean
     let sequentialLetters = true;
     for (let l = 0; l < password.length; l++) {
         // verificação de sequencia de letra pelo charcodeatt usando o metodo unicode.
@@ -87,7 +89,7 @@ function isValidSequentialLetter(password) {
 function isValidSequentialNumber(password) {
     for (let j = 0; j < password.length; j++) {
         let passwordLower = password.toLowerCase();
-        // a condição é: se o número atual do índice (0) somado com 1 for igual ao valor do segundo índice (1)
+        // se o número atual do índice (0) somado com 1 for igual ao valor do segundo índice (1)
         // e se o valor atual do indice (0) somado com 2 for igual ao valor do terceiro indice (2)
         // significa que os caracteres são uma sequências.
         if (+passwordLower[j + 1] == +passwordLower[j] + 1 &&
@@ -125,4 +127,4 @@ function isValidCheck(password) {
     return resultErros;
 }
 exports.isValidCheck = isValidCheck;
-console.log(isValidCheck("EUNÃOTENH@LETR@MsINISCULA"));
+console.log(isValidCheck("!@#kwejdfskdsfSDF234"));
